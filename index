@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang=fr>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Pied de page E-MED-CYBER</title>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href=https://static.wixstatic.com/media/93b4b8_fb50a50ce0af46f386c452808a16321d~mv2.png as=image>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#030f32;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;overflow-x:hidden}
+.scan-line{position:fixed;width:100%;height:3px;background:linear-gradient(90deg,transparent,#00ff88,transparent);box-shadow:0 0 30px #00ff88,0 0 60px #00ff88;animation:scan 6s linear infinite;z-index:9999;pointer-events:none;opacity:.6}
+@keyframes scan{0%{top:0}100%{top:100%}}
+.footer-container{position:relative;background:#030f32;width:100%;min-height:100vh;overflow:hidden}
+.footer-menu{background:#030f32;padding:20px;position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:30px;width:100%;min-height:100vh;overflow:hidden}
+.footer-center,.footer-left,.footer-right{flex:1;max-width:400px;position:relative;z-index:20;display:flex;flex-direction:column;height:340px}
+.footer-center{align-items:center;justify-content:space-between;gap:25px}
+.footer-right{justify-content:center;align-items:flex-start}
+.footer-image{width:100%;max-width:400px;height:340px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.2);object-fit:cover}
+.footer-copyright{text-align:center;color:gold;margin-bottom:25px}
+.footer-copyright .main-text{font-size:18px;font-weight:600;margin-bottom:5px;letter-spacing:.5px}
+.footer-copyright .sub-text{font-size:14px;opacity:.9;font-style:italic}
+.logo-section{display:flex;justify-content:center;gap:15px;margin-bottom:20px}
+.logo-section img{height:30px;width:auto;transition:transform .3s ease}
+.logo-section img:hover{transform:scale(1.1)}
+.trustpilot-widget{background:#fff;padding:10px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.1);text-align:center;z-index:25;position:relative;width:100%;max-width:170px;margin-top:auto}
+.trustpilot-link{display:inline-block;transition:transform .3s ease;text-decoration:none;width:100%}
+.trustpilot-link:hover{transform:scale(1.05)}
+.trustpilot-logo{width:100%;height:auto;max-width:150px;border-radius:5px}
+.trustpilot-text{color:#00b67a;font-size:10px;margin-top:5px;font-weight:600}
+.menu-buttons{display:flex;flex-direction:column;gap:25px;height:340px;overflow:hidden;justify-content:center}
+.footer-btn{display:flex;align-items:center;padding:20px 25px;background:rgba(52,84,209,.3);color:gold;text-decoration:none;border-radius:50px;font-size:16px;transition:all .5s cubic-bezier(.25,.46,.45,.94);border:2px solid transparent;position:relative;overflow:hidden;backdrop-filter:blur(10px);box-shadow:0 4px 15px rgba(0,0,0,.1);width:100%;min-height:60px}
+.footer-btn-text{flex:1;text-align:center;line-height:1.1;font-weight:600}
+.footer-btn::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,gold,#ffec8b,gold,#ffec8b);border-radius:52px;z-index:-1;opacity:0;transition:opacity .3s ease;animation:rotate 2s linear infinite;background-size:400% 400%}
+@keyframes rotate{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.footer-btn:hover::before{opacity:1}
+.footer-btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .8s ease}
+.footer-btn:hover::after{left:100%}
+.footer-btn:hover{background:linear-gradient(135deg,gold 0,#ffec8b 100%);color:#030f32;transform:translateY(-2px) scale(1.02);box-shadow:0 6px 15px rgba(255,215,0,.4);padding-left:30px;letter-spacing:.2px}
+.footer-btn:active{transform:translateY(-1px) scale(.98);animation:pulse .3s ease}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,215,0,.7)}70%{box-shadow:0 0 0 6px rgba(255,215,0,0)}100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}}
+.footer-btn .icon{margin-left:auto;opacity:0;transition:all .4s ease;font-size:18px;font-weight:700}
+.footer-btn:hover .icon{opacity:1;animation:bounce .6s ease infinite alternate}
+@keyframes bounce{from{transform:translateX(0)}to{transform:translateX(2px)}}
+.cube-container{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:15}
+:root{--cube-size:145.6px;--face-translate:72.8px}
+.scene{width:var(--cube-size);height:var(--cube-size);perspective:1000px;position:absolute;pointer-events:none;will-change:transform;transform-style:preserve-3d}
+.cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:rotateCube 6s infinite linear;pointer-events:none}
+.face{width:100%;height:100%;position:absolute;border:2px solid #3454d1;background-color:rgba(52,84,209,.6);margin:5px;pointer-events:none}
+.front{transform:rotateY(0) translateZ(var(--face-translate))}
+.back{transform:rotateY(180deg) translateZ(var(--face-translate))}
+.right{transform:rotateY(90deg) translateZ(var(--face-translate))}
+.left{transform:rotateY(-90deg) translateZ(var(--face-translate))}
+.top{transform:rotateX(90deg) translateZ(var(--face-translate))}
+.bottom{transform:rotateX(-90deg) translateZ(var(--face-translate))}
+.letter{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:18px;color:gold;text-shadow:0 0 10px gold;white-space:nowrap;pointer-events:none;font-weight:700}
+.image{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateZ(1px);width:73px;pointer-events:none}
+@keyframes rotateCube{0%{transform:rotateX(0) rotateY(0)}100%{transform:rotateX(360deg) rotateY(360deg)}}
+@media (max-width:768px){
+  .footer-menu{flex-direction:column;padding:15px;gap:25px;min-height:auto;overflow:visible}
+  .footer-center,.footer-left,.footer-right{max-width:100%;height:auto;width:100%}
+  .menu-buttons{display:grid;grid-template-columns:1fr 1fr;gap:15px;height:auto;overflow:visible;justify-content:normal}
+  .footer-btn{padding:15px 20px;font-size:14px;min-height:50px;text-align:center;justify-content:center}
+  .footer-btn-text{text-align:center;flex:none}
+  .footer-btn .icon{display:none}
+  .footer-btn:hover{padding-left:20px}
+  .footer-center{gap:20px;order:-1}
+  .footer-copyright{margin-bottom:15px}
+  .footer-copyright .main-text{font-size:16px}
+  .footer-copyright .sub-text{font-size:13px}
+  .logo-section{margin-bottom:15px}
+  .logo-section img{height:25px}
+  .trustpilot-widget{max-width:200px;margin:10px auto 0}
+  .trustpilot-logo{max-width:180px}
+  .trustpilot-text{font-size:11px}
+  .footer-image{height:250px;max-width:100%}
+  :root{--cube-size:91px;--face-translate:45.5px}
+  .letter{font-size:10px}
+  .image{width:39px}
+  .cube{animation:rotateCube 9s infinite linear}
+}
+@media (max-width:480px){
+  .menu-buttons{grid-template-columns:1fr;gap:12px}
+  .footer-btn{padding:12px 15px;font-size:13px;min-height:45px}
+  .footer-image{height:200px}
+  :root{--cube-size:78px;--face-translate:39px}
+  .trustpilot-widget{max-width:180px}
+  .trustpilot-logo{max-width:160px}
+}
+@media (min-width:769px) and (max-width:1024px){
+  .footer-menu{gap:20px;padding:20px 15px}
+  .footer-center,.footer-left,.footer-right{max-width:30%}
+  .menu-buttons{gap:20px}
+  .footer-btn{font-size:14px;padding:15px 20px;min-height:55px}
+}
+</style>
+<div class=scan-line></div>
+<div class=footer-container>
+  <div class=footer-menu>
+    <div class=footer-left>
+      <div class=menu-buttons>
+        <a href=https://www.e-med-cyber.fr/qui-sommes-nous target=_blank rel=noopener class=footer-btn><span class=footer-btn-text>À propos</span><span class=icon>→</span></a>
+        <a href=https://www.e-med-cyber.fr/mentions-legales target=_blank rel=noopener class=footer-btn><span class=footer-btn-text>Mentions légales</span><span class=icon>→</span></a>
+        <a href=https://www.e-med-cyber.fr/foire-aux-questions target=_blank rel=noopener class=footer-btn><span class=footer-btn-text>Questions fréquentes</span><span class=icon>→</span></a>
+        <a href="mailto:contact@e-med-cyber.fr" class=footer-btn><span class=footer-btn-text>Besoin d'aide ?</span><span class=icon>→</span></a>
+      </div>
+    </div>
+    <div class=footer-center>
+      <div class=footer-copyright>
+        <div class=main-text>© 2023 E-MED-CYBER</div>
+        <div class=sub-text>Le spécialiste de la Cyberdéfense</div>
+      </div>
+      <div class=logo-section>
+        <img src=https://static.wixstatic.com/media/93b4b8_39f6dca22e2d41a388d6f16ea806e202~mv2.png alt="Logo 1" loading=lazy width=30 height=30>
+        <img src=https://static.wixstatic.com/media/93b4b8_29e037c361ab4c619738818663bc55a0~mv2.png alt="Logo 2" loading=lazy width=30 height=30>
+      </div>
+      <div class=trustpilot-widget>
+        <a href=https://fr.trustpilot.com/review/e-med-cyber.fr target=_blank rel=noopener class=trustpilot-link>
+          <img src=https://static.wixstatic.com/media/93b4b8_fb50a50ce0af46f386c452808a16321d~mv2.png alt=Trustpilot class=trustpilot-logo width=150 height=auto>
+          <div class=trustpilot-text>Voir nos avis</div>
+        </a>
+      </div>
+    </div>
+    <div class=footer-right>
+      <img src=https://static.wixstatic.com/media/93b4b8_905f985f466941dca4bbb59858ac2fe8~mv2.jpg alt="Image droite" class=footer-image loading=lazy width=400 height=340>
+    </div>
+  </div>
+  <div class=cube-container>
+    <div class=scene>
+      <div class=cube>
+        <div class="face front"><div class=letter>E-MED-CYBER</div></div>
+        <div class="face back"><div class=letter>E-MED-CYBER</div></div>
+        <div class="face right"><div class=letter>E-MED-CYBER</div></div>
+        <div class="face left"><div class=letter>E-MED-CYBER</div></div>
+        <div class="face top"><div class=letter>E-MED-CYBER</div></div>
+        <div class="face bottom"><div class=letter>E-MED-CYBER</div></div>
+        <img class=image src=https://static.wixstatic.com/media/93b4b8_39962835c12a401480b40c8631f929e5~mv2.png alt=Logo loading=lazy width=73 height=73>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const l=["https://www.e-med-cyber.fr/qui-sommes-nous","https://www.e-med-cyber.fr/mentions-legales","https://www.e-med-cyber.fr/foire-aux-questions","https://fr.trustpilot.com/review/e-med-cyber.fr"];
+function p(e){return fetch(e,{method:"GET",mode:"no-cors",cache:"force-cache"}).catch((()=>{}))}
+function s(){
+  const e=window.innerWidth<=768,t=navigator.connection;
+  if(t&&(t.saveData||"slow-2g"===t.effectiveType||"2g"===t.effectiveType)){
+    let e=0;
+    const t=()=>{if(e<2){const n=p(l[e]);n&&n.then((()=>{e++,setTimeout(t,1500)}))}};
+    return void t()
+  }
+  let n=0,o=e?1e3:500;
+  const r=()=>{if(n<l.length){const e=p(l[n]);e&&e.then((()=>{n++,setTimeout(r,o)}))}};
+  r()
+}
+document.querySelectorAll(".footer-btn:not([href^='mailto']),.trustpilot-link").forEach((e=>{
+  e.addEventListener("mouseenter",(function(){l.includes(this.href)&&p(this.href)}),{passive:!0})
+}));
+setTimeout(s,1e3);
+const f=document.querySelector(".footer-menu"),sc=document.querySelector(".scene");
+function u(){
+  const e=f.getBoundingClientRect(),t=window.innerWidth<=768,n=t?91:145.6,o=e.width-n-20,r=e.height-n-20;
+  let s=Math.random()*o,i=Math.random()*r,c=(Math.random()+.36)*(t?.6:.72),a=(Math.random()+.36)*(t?.6:.72);
+  !function e(){
+    s+=c,i+=a,(s>=o||s<=0)&&(c=-c,s=Math.max(0,Math.min(s,o))),(i>=r||i<=0)&&(a=-a,i=Math.max(0,Math.min(i,r)));
+    sc.style.transform=`translate(${s}px,${i}px)`;
+    requestAnimationFrame(e)
+  }()
+}
+u(),window.addEventListener("resize",u,{passive:!0})
+</script>
