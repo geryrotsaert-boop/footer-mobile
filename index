@@ -11,8 +11,11 @@
 body{background:#030f32;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;overflow-x:hidden}
 .scan-line{position:fixed;width:100%;height:3px;background:linear-gradient(90deg,transparent,#00ff88,transparent);box-shadow:0 0 30px #00ff88,0 0 60px #00ff88;animation:scan 6s linear infinite;z-index:9999;pointer-events:none;opacity:.6}
 @keyframes scan{0%{top:0}100%{top:100%}}
-.footer-container{position:relative;background:#030f32;width:100%;min-height:100vh;overflow:hidden}
-.footer-menu{background:#030f32;padding:20px;position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:30px;width:100%;min-height:100vh;overflow:hidden}
+
+/* ── CORRECTION : min-height:100vh retiré des deux conteneurs ── */
+.footer-container{position:relative;background:#030f32;width:100%;overflow:hidden}
+.footer-menu{background:#030f32;padding:20px;position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:30px;width:100%;overflow:hidden}
+
 .footer-center,.footer-left,.footer-right{flex:1;max-width:400px;position:relative;z-index:20;display:flex;flex-direction:column;height:340px}
 .footer-center{align-items:center;justify-content:space-between;gap:25px}
 .footer-right{justify-content:center;align-items:flex-start}
@@ -56,8 +59,9 @@ body{background:#030f32;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 .letter{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:18px;color:gold;text-shadow:0 0 10px gold;white-space:nowrap;pointer-events:none;font-weight:700}
 .image{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateZ(1px);width:73px;pointer-events:none}
 @keyframes rotateCube{0%{transform:rotateX(0) rotateY(0)}100%{transform:rotateX(360deg) rotateY(360deg)}}
+
 @media (max-width:768px){
-  .footer-menu{flex-direction:column;padding:15px;gap:25px;min-height:auto;overflow:visible}
+  .footer-menu{flex-direction:column;padding:15px;gap:25px;overflow:visible}
   .footer-center,.footer-left,.footer-right{max-width:100%;height:auto;width:100%}
   .menu-buttons{display:grid;grid-template-columns:1fr 1fr;gap:15px;height:auto;overflow:visible;justify-content:normal}
   .footer-btn{padding:15px 20px;font-size:14px;min-height:50px;text-align:center;justify-content:center}
@@ -107,7 +111,7 @@ body{background:#030f32;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
     </div>
     <div class=footer-center>
       <div class=footer-copyright>
-        <div class=main-text>© 2023 E-MED-CYBER</div>
+        <div class=main-text>© 2026 E-MED-CYBER</div>
         <div class=sub-text>Le spécialiste de la Cyberdéfense</div>
       </div>
       <div class=logo-section>
@@ -122,7 +126,7 @@ body{background:#030f32;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
       </div>
     </div>
     <div class=footer-right>
-      <img src=https://static.wixstatic.com/media/93b4b8_905f985f466941dca4bbb59858ac2fe8~mv2.jpg alt="Image droite" class=footer-image loading=lazy width=400 height=340>
+      <img src=https://static.wixstatic.com/media/93b4b8_1a47317fb9024f2983ce70dd294eb6d5~mv2.webp alt="Image droite" class=footer-image loading=lazy width=400 height=340>
     </div>
   </div>
   <div class=cube-container>
